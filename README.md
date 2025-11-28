@@ -5,13 +5,14 @@ The agent parses structured responses from Claude, executes tools, feeds observa
 
 
 ## 📁 Project Structure
+```
 .
 ├── main_func.py               # Main agent executor (this file)
 ├── promptTemplates.py     # Contains system prompts
 ├── tools.py               # Defines executable tools
 ├── .env                   # Contains API_KEY
 └── README.md
-
+```
 ## 🚀 Getting Started
 1. Install Dependencies
 ```pip install -r requirements.txt```
@@ -32,28 +33,27 @@ Create a .env file containing:
 
 Tools are discovered via:
 
-self.tool_list = agent_tool().get_tool_list()
-
+```self.tool_list = agent_tool().get_tool_list()```
 
 A tool must be a callable like:
-
+```
 def add(a, b):
     return int(a) + int(b)
-
+```
 
 and registered in tools.py.
 
 The model can request it via:
-
-<Action>add(a=1, b=2)</Action>
+```<Action>add(a=1, b=2)</Action>```
 
 # 🧪 Example Output
+```
 Current state: thinking
 Thinking: This problem contains...
 Current state: action
 Action: calculate(a=5, b=10)
 Do you want to execute the Action? (Y/N):
-
+```
 
 🤝 Contributing
 
