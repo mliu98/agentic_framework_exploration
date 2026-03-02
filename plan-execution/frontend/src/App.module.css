@@ -1,0 +1,126 @@
+/* ---- Layout ---- */
+.layout { display: flex; flex-direction: column; min-height: 100vh; }
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.headerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #4f46e5; }
+.logoIcon { font-size: 22px; }
+
+.resetBtn {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #374151;
+  transition: background .15s;
+}
+.resetBtn:hover { background: #f3f4f6; }
+
+.main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 32px 24px;
+}
+
+.processingLayout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .processingLayout { grid-template-columns: 1fr; }
+}
+
+/* ---- Email summary card ---- */
+.emailCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.emailCardLabel { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #6b7280; margin-bottom: 8px; }
+.emailCardBody { font-size: 15px; line-height: 1.6; color: #111827; margin-bottom: 10px; }
+.emailCardMeta { font-size: 13px; color: #6b7280; }
+
+/* ---- Status cards ---- */
+.waitingCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.doneCard {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.doneIcon { font-size: 28px; color: #16a34a; }
+.doneCard strong { font-size: 16px; color: #15803d; }
+.doneCard p { font-size: 14px; color: #166534; }
+
+.errorCard {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.errorCard strong { color: #be123c; }
+.errorCard p { font-size: 14px; color: #9f1239; }
+.retryBtn {
+  align-self: flex-start;
+  background: #be123c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.retryBtn:hover { background: #9f1239; }

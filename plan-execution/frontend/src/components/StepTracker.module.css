@@ -1,0 +1,107 @@
+.tracker {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 20px;
+  position: sticky;
+  top: 76px;
+}
+
+.heading { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #6b7280; margin-bottom: 20px; }
+
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+/* ---- Single step ---- */
+.step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 12px;
+  position: relative;
+}
+
+/* Vertical connector line */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: -12px;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.stepIconWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--step-color) 12%, #fff);
+  border: 2px solid color-mix(in srgb, var(--step-color) 30%, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.stepIcon { font-size: 16px; line-height: 1; }
+
+.stepContent {
+  padding-bottom: 16px;
+  min-width: 0;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.stepLabel { font-size: 14px; font-weight: 600; color: #111827; }
+.checkmark { color: #16a34a; font-size: 14px; }
+
+/* ---- Node data ---- */
+.nodeData { display: flex; flex-direction: column; gap: 6px; }
+
+.badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--badge-color);
+  background: color-mix(in srgb, var(--badge-color) 12%, #fff);
+  border: 1px solid color-mix(in srgb, var(--badge-color) 25%, #fff);
+}
+
+.topic { font-size: 12px; color: #374151; }
+.summary { font-size: 12px; color: #6b7280; line-height: 1.5; }
+
+.resultList { list-style: disc; padding-left: 16px; font-size: 12px; color: #374151; display: flex; flex-direction: column; gap: 3px; }
+
+.ticketId { font-size: 12px; font-weight: 600; color: #d97706; }
+
+.draft { font-size: 12px; color: #374151; line-height: 1.6; max-height: 80px; overflow-y: auto; }
+
+.sentMsg { font-size: 12px; color: #16a34a; font-weight: 600; }
+
+/* ---- Active / review steps ---- */
+.stepActive .stepLabel { color: #4f46e5; }
+.stepReview .stepLabel { color: #f97316; }
+
+.spinnerDot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty { font-size: 13px; color: #9ca3af; }
